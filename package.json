@@ -1,0 +1,21 @@
+{
+  "name": "imagemin-gm",
+  "version": "1.0.0",
+  "description": "GraphicsMagick imagemin plugin",
+  "main": "index.js",
+  "author": "Frederic Hemberger <mail@frederic-hemberger.de> (https://frederic-hemberger.de/)",
+  "license": "MIT",
+  "keywords": [
+    "compress",
+    "gm",
+    "graphicsmagick",
+    "image",
+    "imageminplugin",
+    "img",
+    "minify",
+    "optimize"
+  ],
+  "dependencies": {
+    "gm": "^1.22.0"
+  }
+}
