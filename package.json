@@ -1,6 +1,6 @@
 {
   "name": "imagemin-gm",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "GraphicsMagick imagemin plugin",
   "main": "index.js",
   "author": "Frederic Hemberger <mail@frederic-hemberger.de> (https://frederic-hemberger.de/)",
@@ -15,6 +15,9 @@
     "img",
     "minify",
     "optimize"
+  ],
+  "files": [
+    "index.js"
   ],
   "dependencies": {
     "gm": "^1.22.0"
