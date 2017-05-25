@@ -20,6 +20,6 @@
     "index.js"
   ],
   "dependencies": {
-    "gm": "^1.22.0"
+    "gm": "^1.23.0"
   }
 }
