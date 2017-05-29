@@ -1,4 +1,6 @@
-# imagemin-gm [![npm version][npm-image]][npm-url]
+# imagemin-gm
+
+[![npm version][npm-image]][npm-url] [![Greenkeeper badge](https://badges.greenkeeper.io/fhemberger/imagemin-gm.svg)](https://greenkeeper.io/)
 
 > GraphicsMagick imagemin plugin
 
