@@ -1,11 +1,8 @@
 # imagemin-gm
 
-[![npm version][npm-image]][npm-url] [![Greenkeeper badge](https://badges.greenkeeper.io/fhemberger/imagemin-gm.svg)](https://greenkeeper.io/)
+[![npm version][npm-image]][npm-url]
 
-> GraphicsMagick imagemin plugin
-
-**Important:** This plugin requires [GraphicsMagick](http://www.graphicsmagick.org) to be installed.  
-On Mac OS X (for example), this can be done via [Homebrew](http://brew.sh): `brew install graphicsmagick`.
+GraphicsMagick plugin for [imagemin](https://github.com/imagemin/imagemin)
 
 
 ## Install
@@ -14,41 +11,60 @@ On Mac OS X (for example), this can be done via [Homebrew](http://brew.sh): `bre
 $ npm install --save imagemin-gm
 ```
 
+**Important:** This plugin requires [GraphicsMagick](http://www.graphicsmagick.org) to be installed.  
+On macOS for example, you can use [Homebrew](http://brew.sh): `brew install graphicsmagick`.
+
+If this script throws the Exception `Stream yields empty buffer`, this means the GraphicsMagick binaries can not be found in your path. You can pass the location to the `ImageminGm` constructor.
+
 
 ## Usage
 
 ```js
-const imagemin = require('imagemin');
-const imageminGm = require('imagemin-gm');
+const imagemin = require('imagemin')
+const ImageminGm = require('imagemin-gm')
+const imageminGm = new ImageminGm()
 
 const plugins = [
-    imageminGm.resize({ width: 250, height: 250, gravity: 'Center' }),
-    imageminGm.convert('jpg')
-];
-imagemin(['images/*.gif'], 'build/images', { use: plugins }).then(() => {
-	console.log('Images optimized');
-});
+  imageminGm.resize({ width: 250, height: 250, gravity: 'Center' }),
+  imageminGm.convert('jpg')
+]
+
+imagemin(['images/*.gif'], 'output', { use: plugins })
+  .then(() => console.log('Images converted'))
+  .catch(err => console.error(err))
 ```
 
 
 ## API
 
-### imageminGm.resize({options})(buffer)
+### ImageminGm([gmPath])
 
-Resizes the image buffer. At least one dimension must be given, otherwise the image isn't altered. If both image dimensions are set, the image is resized to fit the constraints while maintaining the original aspect ratio. Image position can be adjusted with the `gravity` parameter.
+Constructor, optionally pass the path to GraphicsMagick binaries (not the binary itself).
+
+Example:
+
+```js
+// Posix
+let imageminGm = new ImageminGm('/path/to/gm/binaries/')
+// Windows
+let imageminGm = new ImageminGm('C:\\Path\\to\\gm\\binaries\\')
+```
+
+
+### imageminGm.resize(options)
+
+Resizes the image buffer. At least one dimension must be given, otherwise the image isn't altered. If both image dimensions are set, the image is resized to fit the constraints while maintaining the original aspect ratio. Image position can be adjusted with the `gravity` option.
 
 #### Options
 - `width`
 - `height`
 - `gravity` (optional): NorthWest|North|NorthEast|West|Center|East|SouthWest|South|SouthEast
 
-### imageminGm.convert(format)(buffer)
 
-Converts the image buffer to a different image format.
-**Note:** If you use the imagemin CLI tool or the `grunt`/`gulp` task, the original filename is used, although the image format has changed. You have to rename the file with the correct extension yourself afterwards.
+### imageminGm.convert(format)
 
-#### Options
-- `format` (e.g. 'gif', 'jpeg', 'png')
+Converts the image buffer to a different image format (e.g. 'gif', 'jpeg', 'png').
+**Note:** The original filename is used, although the image format has changed. You have to rename the file with the correct extension yourself afterwards.
 
 
 ## License
