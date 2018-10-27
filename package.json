@@ -1,6 +1,6 @@
 {
   "name": "imagemin-gm",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "GraphicsMagick imagemin plugin",
   "main": "index.js",
   "author": "Frederic Hemberger (https://frederic-hemberger.de/)",
@@ -20,8 +20,8 @@
     "index.js"
   ],
   "dependencies": {
-    "gm": "^1.23.0",
-    "snyk": "^1.48.1"
+    "gm": "1.23.1",
+    "snyk": "1.105.0"
   },
   "scripts": {
     "snyk-protect": "snyk protect",
