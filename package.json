@@ -20,7 +20,9 @@
     "index.js"
   ],
   "dependencies": {
-    "gm": "1.23.1",
+    "gm": "1.23.1"
+  },
+  "devDependencies": {
     "snyk": "1.147.4"
   },
   "scripts": {
