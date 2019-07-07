@@ -50,7 +50,7 @@ module.exports = class ImageminGm {
           }
 
           // Make sure transparent PNGs get a white background when converted to JPG
-          if (format === 'JPG') {
+          if (format === 'PNG') {
             image = image
               // Compression level is adjusted later in the process
               .quality(100)
