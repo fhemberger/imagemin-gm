@@ -19,7 +19,14 @@ module.exports = class ImageminGm {
         return Promise.reject(new TypeError('Expected a buffer'))
       }
 
-      let image = this.gm(buf).resize(opts.width, opts.height)
+      let image;
+
+      // Disable upscaling the image
+      if(opts.upscale) {
+        image = this.gm(buf).resize(opts.width, opts.height);
+      } else {
+        image = this.gm(buf).resize(opts.width, opts.height, ">")
+      }
 
       if (opts.gravity) {
         image = image.gravity(opts.gravity)
