@@ -1,6 +1,6 @@
 {
   "name": "imagemin-gm",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "GraphicsMagick imagemin plugin",
   "main": "index.js",
   "author": "Frederic Hemberger (https://frederic-hemberger.de/)",
@@ -20,12 +20,12 @@
     "index.js"
   ],
   "dependencies": {
-    "gm": "1.23.1"
+    "gm": "1.25.0"
   },
   "devDependencies": {
-    "eslint-config-standard": "12.0.0",
-    "eslint-plugin-node": "8.0.1",
-    "eslint-plugin-promise": "4.1.1",
-    "eslint-plugin-standard": "4.0.0"
+    "eslint-config-standard": "17.0.0",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-promise": "6.1.1",
+    "eslint-plugin-standard": "5.0.0"
   }
 }
